@@ -3,7 +3,7 @@
                                          "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <!-- Version 8 MySQL hiberante-cfg.xml example for Hibernate 5 -->
 <hibernate-configuration>
- <session-factory>
+ <session-factory name="">
   <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
   <!-- property name="connection.driver_class">com.mysql.jdbc.Driver</property -->
   <property name="connection.url">jdbc:mysql://localhost:3306/empresa?useSSL=false&amp;serverTimezone=UTC</property>
@@ -18,7 +18,7 @@
   <property name="hbm2ddl.auto">update</property>
   <mapping class="empresaHibernate.Departamento"/>
   <mapping class="empresaHibernate.Empleado"/>
-<!--   <mapping resource="Departamento.hbm.xml"/> -->
-<!--   <mapping resource="Empleado.hbm.xml"/> -->
+  <!--   <mapping resource="Departamento.hbm.xml"/> 
+   <mapping resource="Empleado.hbm.xml"/> -->
  </session-factory>
 </hibernate-configuration>

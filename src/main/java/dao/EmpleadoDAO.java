@@ -1,11 +1,14 @@
 package dao;
 
+import java.util.List;
+
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 
 import org.hibernate.Session;
+import org.hibernate.internal.build.AllowSysOut;
 import org.hibernate.query.Query;
 
 import empresaHibernate.Empleado;
@@ -34,14 +37,18 @@ public class EmpleadoDAO {
 		CriteriaBuilder builder = s.getCriteriaBuilder();
 		CriteriaQuery<Empleado> query = builder.createQuery(Empleado.class);
 		Root<Empleado> root = query.from(Empleado.class);
-    	query.select(root).where(builder.gt(root.get("cod_departamento"), cod_departamento));
+    	query.select(root).where(builder.equal(root.get("codDepartamento"), cod_departamento));
     	Query<Empleado> q = s.createQuery(query);
-    	Empleado result = q.getSingleResult();
-		return result;
+    	List<Empleado> result = (List<Empleado>) q.list();
+		for(Empleado e : result) {
+			System.out.println(e.toString());
+		}
+    	return null;
 	}
 	
 	//Consulta con HQL
 	public static Empleado empleadosMayores(Session s, int edad) {
+		
 		  String hQuery = " TIMESTAMPDIFF(YEAR,edad,CURDATE()) AS edad\r\n"
 		  		+ "	     FROM empleado";
 		  Empleado empleado = s.createQuery(hQuery, Empleado.class)
@@ -49,6 +56,5 @@ public class EmpleadoDAO {
 		                   .setMaxResults(1)
 		                   .uniqueResult();
 	    return empleado;
-
-		}
+	}
 }

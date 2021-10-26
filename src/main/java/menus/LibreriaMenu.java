@@ -483,16 +483,6 @@ public class LibreriaMenu {
 	            	EmpleadoDAO empleado = new EmpleadoDAO();
 	            	Empleado resultadoempleado = empleado.consultarEmpleado(session, cod_departamento);
 	            	
-	                System.out.println(resultadoempleado.getCodigo() + " " + 
-		                	   resultadoempleado.getNombre() + " " + 
-		                	   resultadoempleado.getApellido1() + " " +
-		                       resultadoempleado.getApellido2() + " " +
-		                	   resultadoempleado.getLugarNacimiento() + " " +
-		                	   resultadoempleado.getFechaNacimiento() + " " +
-		                	   resultadoempleado.getDireccion() + " " +
-		                       resultadoempleado.getTelefono() + " " +
-		                	   resultadoempleado.getPuesto()+ " " +
-		                	   resultadoempleado.getCodDepartamento());
 	            case 6:
 	            	int edad;
 	    			Scanner mayores_edad = new Scanner (System.in);	
