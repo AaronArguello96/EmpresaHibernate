@@ -1,7 +1,7 @@
-<?xml version="1.0"?>
+<!-- <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 22 oct 2021 18:36:22 by Hibernate Tools 4.3.5.Final -->
+  Generated 22 oct 2021 18:36:22 by Hibernate Tools 4.3.5.Final
 <hibernate-mapping>
     <class name="empresaHibernate.Departamento" table="departamento" optimistic-lock="version">
         <id name="codigo" type="int">
@@ -15,4 +15,4 @@
             <column name="cod_responsable" not-null="true" />
         </property>
     </class>
-</hibernate-mapping>
+</hibernate-mapping> -->

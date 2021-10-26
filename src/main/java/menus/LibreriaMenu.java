@@ -472,7 +472,47 @@ public class LibreriaMenu {
 	            		logger.warn("La opción introducida para leer la información no es válida.");
 	            		return;
 	            	}
+	            //Consulta criteria
+	            case 5:
+	            	int cod_departamento;
+	    			Scanner valor_cod_departamento = new Scanner (System.in);	
+	    			//Pedimos los datos al usuario
+	    			System.out.println("Introduzca el código del departamento:");
+	    			cod_departamento = valor_cod_departamento.nextInt();	
+	    			
+	            	EmpleadoDAO empleado = new EmpleadoDAO();
+	            	Empleado resultadoempleado = empleado.consultarEmpleado(session, cod_departamento);
 	            	
+	                System.out.println(resultadoempleado.getCodigo() + " " + 
+		                	   resultadoempleado.getNombre() + " " + 
+		                	   resultadoempleado.getApellido1() + " " +
+		                       resultadoempleado.getApellido2() + " " +
+		                	   resultadoempleado.getLugarNacimiento() + " " +
+		                	   resultadoempleado.getFechaNacimiento() + " " +
+		                	   resultadoempleado.getDireccion() + " " +
+		                       resultadoempleado.getTelefono() + " " +
+		                	   resultadoempleado.getPuesto()+ " " +
+		                	   resultadoempleado.getCodDepartamento());
+	            case 6:
+	            	int edad;
+	    			Scanner mayores_edad = new Scanner (System.in);	
+	    			//Pedimos los datos al usuario
+	    			System.out.println("Introduzca la edad:");
+	    			edad = mayores_edad.nextInt();	
+	    			
+	            	EmpleadoDAO empleado1 = new EmpleadoDAO();
+	            	Empleado resultadoempleado1 = empleado1.empleadosMayores(session, edad);
+	            	
+	                System.out.println(resultadoempleado1.getCodigo() + " " + 
+		                	   resultadoempleado1.getNombre() + " " + 
+		                	   resultadoempleado1.getApellido1() + " " +
+		                       resultadoempleado1.getApellido2() + " " +
+		                	   resultadoempleado1.getLugarNacimiento() + " " +
+		                	   resultadoempleado1.getFechaNacimiento() + " " +
+		                	   resultadoempleado1.getDireccion() + " " +
+		                       resultadoempleado1.getTelefono() + " " +
+		                	   resultadoempleado1.getPuesto()+ " " +
+		                	   resultadoempleado1.getCodDepartamento());
 	        }//SWITCH
 	        
 	        //Hacemos un commit para guardar los cambios hechos y que funcionen las operaciones

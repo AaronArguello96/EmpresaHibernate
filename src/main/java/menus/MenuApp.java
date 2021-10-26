@@ -21,5 +21,7 @@ public class MenuApp {
         menuInicial.add("2.- Borrar dato");
         menuInicial.add("3.- Actualizar dato");
         menuInicial.add("4.- Leer dato");
+        menuInicial.add("5.- Consultar empleado por código departamento");
+        menuInicial.add("6.- Consultar empleados por edad");
     }
 }
